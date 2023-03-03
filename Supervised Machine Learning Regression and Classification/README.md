@@ -136,11 +136,50 @@ A **Função de Custo** pega a estimativa $\hat{y}$ e compara com o alvo $y$ faz
 
 Com isso, medimos o quão longe a estimativa está do valor alvo. Agora vamos computar o quadrado do erro de todo o conjunto de treinamento: $\sum_{i = 1}^{m} (\hat{y}^{(i)} - y{(i)})^2$
 
-Para não ter que ter problemas computando cada um dos dados de treinamento de um conjunto de dados quando temos muitos dados, por convenção, nós vamos computar a a média do erro ao quadrado, ao invés do total(e por convenção, são 2 vezes o m): $J(w,b)=\frac{1}{2m} \sum_{i = 1}^{m} (\hat{y}^{(i)} - y{(i)})^2$
+Para não ter que ter problemas computando cada um dos dados de treinamento de um conjunto de dados quando temos muitos dados, por convenção, nós vamos computar a a média do erro ao quadrado, ao invés do total(e por convenção, são 2 vezes o m):
 
 **Função de Custo de Erro Quadrado**
 
-$\hat{y} = f_{}$
-Descrição: A fu
+É a mais comum utilizada para regressão linear.
+
+ $J(w,b)=\frac{1}{2m} \sum_{i = 1}^{m} (\hat{y}^{(i)} - y^{(i)})^2$
+
+$\hat{y} = f_{w, b}(x^{(i)})$
+
+$f_{w, b}(x^{(i)}) =  wx^(i) + b$
 
 $m$: é o número de exemplos de treinamento.
+
+# Intuição da Função de Custo
+
+### Modelo: 
+- $f_{w,b} = wx + b$
+
+### Parâmetros: 
+- $w, b$
+
+### Função de Custo:
+- $J(w,b)=\frac{1}{2m} \sum_{i = 1}^{m} (\hat{y}^{(i)} - y^{(i)})^2$
+### Objetivo:
+- Minimizar $J(w, b)$
+  - Encontrar uma valor de w, b que minimize o valor de $J(w, b)$.
+
+A ideia é encontrar um valor de w e b que se sencaixe bem nos dados de treinamento.  Para medir o quão bem a escolha foi feita, utilizamos a função de custo. A função de custo mede qual é o valor da diferença entre o y verdadeiro e o $\hat{y}^{(i)}$
+
+## Exemplo de uma aplicação simplificada da função de custo:
+
+$b=0$
+
+![funcao_de_custo](./Images/exemplo_funcao_de_custo.png)
+A função de custo, a partir do $\hat{y}^{(i)}$ e do $y$, descobre o custo, o erro que o valor de $w$ causou.
+![funcao_de_custo2](./Images/exemplo_funcao_de_custo_2.png)
+Quando menor o valor da função $J(w)$, melhor é o valor de $w$ escolhido.
+![funcao_de_custo3](./Images/exemplo_funcao_de_custo_3.png)
+![funcao_de_custo4](./Images/exemplo_funcao_de_custo_4.png)
+Por fim, o objetivo é minimizar o valor da função de custo: $j(w)$
+
+# Visualizando a função de custo.
+
+![visualizacao](Images/visualizando_funcao_de_custo.png)
+O grafo na posição superior direita é como se fosse o grafo de baixo cortado. Todos os pontos que estão na mesma linha possuem o mesmo custo J. Esse graço possui B e W como eixos. Quando mais você se aproxima do meio dele, mais você se aproxima do custo mínimo da função J.
+Lembre-se. O gráfico da função de custo tem um formato de uma bacia.
